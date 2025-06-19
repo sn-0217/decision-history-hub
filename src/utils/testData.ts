@@ -123,3 +123,24 @@ export const updateSubmissionConfig = async (config: any) => {
     throw error;
   }
 };
+
+export const updateAppsConfig = async (config: any) => {
+  try {
+    const response = await fetch('/api/update-apps-config', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(config),
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to update apps config: ${response.status}`);
+    }
+    const data = await response.text();
+    console.log('Update apps config API response:', data);
+    return data;
+  } catch (error) {
+    console.error('Error updating apps config:', error);
+    throw error;
+  }
+};

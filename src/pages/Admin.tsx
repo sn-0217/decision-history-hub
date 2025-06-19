@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Edit3, Save, X, CheckCircle, XCircle, Clock, Trash2, Calendar, User, FileText, Code, Settings, LogOut, Server, Database } from 'lucide-react';
+import { ArrowLeft, Edit3, Save, X, CheckCircle, XCircle, Clock, Trash2, Calendar, User, FileText, Code, Settings, LogOut, Server, Database, Layers } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,6 +15,7 @@ import { useEnvironment } from '@/contexts/EnvironmentContext';
 import { useAuth } from '@/contexts/AuthContext';
 import DeleteConfirmationDialog from '@/components/DeleteConfirmationDialog';
 import SubmissionJsonEditor from '@/components/SubmissionJsonEditor';
+import AppsJsonEditor from '@/components/AppsJsonEditor';
 
 // Backend submission interface to match the API response
 interface BackendSubmission {
@@ -344,13 +345,17 @@ const Admin = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className={`grid w-full ${isAdmin ? 'grid-cols-4' : 'grid-cols-1'} max-w-md`}>
+          <TabsList className={`grid w-full ${isAdmin ? 'grid-cols-5' : 'grid-cols-1'} max-w-lg`}>
             <TabsTrigger value="submissions" className="gap-2">
               <FileText className="w-4 h-4" />
               Submissions
             </TabsTrigger>
             {isAdmin && (
               <>
+                <TabsTrigger value="applications" className="gap-2">
+                  <Layers className="w-4 h-4" />
+                  Applications
+                </TabsTrigger>
                 <TabsTrigger value="back" className="gap-2">
                   <Server className="w-4 h-4" />
                   Back
@@ -465,6 +470,10 @@ const Admin = () => {
 
           {isAdmin && (
             <>
+              <TabsContent value="applications">
+                <AppsJsonEditor />
+              </TabsContent>
+
               <TabsContent value="back">
                 <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
                   <CardHeader>

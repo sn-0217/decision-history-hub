@@ -270,8 +270,13 @@ const Admin = () => {
   };
 
   const handleLogout = () => {
+    // Call logout function
     logout();
-    navigate('/home');
+    
+    // Add a small delay before navigation to ensure state is properly updated
+    setTimeout(() => {
+      navigate('/home');
+    }, 100);
   };
 
   const getStatusIcon = (decision: string) => {
@@ -345,17 +350,17 @@ const Admin = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className={`grid w-full ${isAdmin ? 'grid-cols-5' : 'grid-cols-1'} max-w-lg`}>
+          <TabsList className={`grid w-full ${isAdmin ? 'grid-cols-5' : 'grid-cols-2'} max-w-lg`}>            
             <TabsTrigger value="submissions" className="gap-2">
               <FileText className="w-4 h-4" />
               Submissions
             </TabsTrigger>
+            <TabsTrigger value="applications" className="gap-2">
+              <Layers className="w-4 h-4" />
+              Applications
+            </TabsTrigger>
             {isAdmin && (
               <>
-                <TabsTrigger value="applications" className="gap-2">
-                  <Layers className="w-4 h-4" />
-                  Applications
-                </TabsTrigger>
                 <TabsTrigger value="back" className="gap-2">
                   <Server className="w-4 h-4" />
                   Back
@@ -468,12 +473,12 @@ const Admin = () => {
             </Card>
           </TabsContent>
 
+          <TabsContent value="applications">
+            <AppsJsonEditor />
+          </TabsContent>
+
           {isAdmin && (
             <>
-              <TabsContent value="applications">
-                <AppsJsonEditor />
-              </TabsContent>
-
               <TabsContent value="back">
                 <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
                   <CardHeader>

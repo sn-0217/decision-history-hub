@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { List, Settings, Shield, Workflow, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,17 +18,39 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({
 }) => {
   const { login, isLoading } = useAuth();
   const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [buttonsEnabled, setButtonsEnabled] = useState(true);
+  
+  // Reset component state when mounted to ensure buttons are clickable
+  useEffect(() => {
+    setButtonsEnabled(true);
+    
+    // This ensures the component is properly re-rendered after navigation
+    const timeoutId = setTimeout(() => {
+      setButtonsEnabled(true);
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const handleAdminClick = () => {
-    setShowLoginDialog(true);
+    if (buttonsEnabled) {
+      setShowLoginDialog(true);
+    }
   };
 
   const handleLogin = async (username: string, password: string) => {
-    const success = await login(username, password);
-    if (success) {
-      onAdminClick();
+    try {
+      const success = await login(username, password);
+      if (success) {
+        // Ensure buttons are enabled before navigation
+        setButtonsEnabled(true);
+        onAdminClick();
+      }
+      return success;
+    } finally {
+      // Always ensure buttons are enabled after login attempt
+      setTimeout(() => setButtonsEnabled(true), 100);
     }
-    return success;
   };
 
   return (
@@ -55,11 +77,25 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({
                 <Shield className="w-4 h-4" />
                 {currentEnv}
               </Badge>
-              <Button variant="outline" size="sm" className="gap-2 hover:scale-105 transition-transform shadow-sm hover:shadow-md" onClick={onViewSubmissions} data-action="view-submissions">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2 hover:scale-105 transition-transform shadow-sm hover:shadow-md" 
+                onClick={() => buttonsEnabled && onViewSubmissions()} 
+                data-action="view-submissions"
+                disabled={!buttonsEnabled}
+              >
                 <List className="w-4 h-4" />
                 Analytics
               </Button>
-              <Button variant="outline" size="sm" className="gap-2 hover:scale-105 transition-transform shadow-sm hover:shadow-md bg-gradient-to-r from-orange-50 to-red-50 border-orange-200 text-orange-700 hover:from-orange-100 hover:to-red-100" onClick={handleAdminClick} data-action="admin">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2 hover:scale-105 transition-transform shadow-sm hover:shadow-md bg-gradient-to-r from-orange-50 to-red-50 border-orange-200 text-orange-700 hover:from-orange-100 hover:to-red-100" 
+                onClick={handleAdminClick} 
+                data-action="admin"
+                disabled={!buttonsEnabled}
+              >
                 <Settings className="w-4 h-4" />
                 Admin
               </Button>

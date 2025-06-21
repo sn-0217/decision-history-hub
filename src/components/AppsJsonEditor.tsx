@@ -101,13 +101,20 @@ const AppsJsonEditor: React.FC<AppsJsonEditorProps> = ({ onClose }) => {
         throw new Error(`Failed to save: ${response.status}`);
       }
 
-      setOriginalApps(JSON.parse(JSON.stringify(apps)));
-      showSuccess('Configuration Saved', 'Applications configuration has been updated successfully.');
+      // Add a small delay before updating state to ensure proper synchronization
+      // This helps prevent issues with button clickability after form submission
+      setTimeout(() => {
+        setOriginalApps(JSON.parse(JSON.stringify(apps)));
+        showSuccess('Configuration Saved', 'Applications configuration has been updated successfully.');
+      }, 50);
     } catch (error) {
       console.error('Failed to save apps JSON:', error);
       showError('Save Failed', 'Could not save the applications configuration. Please try again.');
     } finally {
-      setIsSaving(false);
+      // Add a small delay before setting isSaving to false
+      setTimeout(() => {
+        setIsSaving(false);
+      }, 100);
     }
   };
 

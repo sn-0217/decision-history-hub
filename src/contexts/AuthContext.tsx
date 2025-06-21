@@ -125,24 +125,28 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
-    setUserRole(null);
-    setIsAdmin(false);
-    sessionStorage.removeItem('auth');
-    sessionStorage.removeItem('userRole');
-    
-    // Show logout toast notification
-    toast({
-      title: "Logged Out",
-      description: "You have been successfully logged out.",
-      variant: "default"
-    });
-    
-    // Call logout endpoint
+    // First call logout endpoint
     fetch('/logout', {
       method: 'POST',
       credentials: 'include'
     }).catch(console.error);
+    
+    // Add a small delay before updating state to ensure proper synchronization
+    setTimeout(() => {
+      // Then update state
+      setIsAuthenticated(false);
+      setUserRole(null);
+      setIsAdmin(false);
+      sessionStorage.removeItem('auth');
+      sessionStorage.removeItem('userRole');
+      
+      // Show logout toast notification
+      toast({
+        title: "Logged Out",
+        description: "You have been successfully logged out.",
+        variant: "default"
+      });
+    }, 50);
   };
 
   return (

@@ -1,0 +1,1692 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 7ceb59f..976e50e 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,25 +1,25 @@[m
+[31m-# Logs[m
+[31m-logs[m
+[31m-*.log[m
+[31m-npm-debug.log*[m
+[31m-yarn-debug.log*[m
+[31m-yarn-error.log*[m
+[31m-pnpm-debug.log*[m
+[31m-lerna-debug.log*[m
+[31m-[m
+[31m-node_modules[m
+[31m-dist[m
+[31m-dist-ssr[m
+[31m-*.local[m
+[31m-[m
+[31m-# Editor directories and files[m
+[31m-.vscode/*[m
+[31m-!.vscode/extensions.json[m
+[31m-.idea[m
+[31m-.DS_Store[m
+[31m-*.suo[m
+[31m-*.ntvs*[m
+[31m-*.njsproj[m
+[31m-*.sln[m
+[31m-*.sw?[m
+[31m-.env[m
+[32m+[m[32m# Logs[m[41m[m
+[32m+[m[32mlogs[m[41m[m
+[32m+[m[32m*.log[m[41m[m
+[32m+[m[32mnpm-debug.log*[m[41m[m
+[32m+[m[32myarn-debug.log*[m[41m[m
+[32m+[m[32myarn-error.log*[m[41m[m
+[32m+[m[32mpnpm-debug.log*[m[41m[m
+[32m+[m[32mlerna-debug.log*[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnode_modules[m[41m[m
+[32m+[m[32mdist[m[41m[m
+[32m+[m[32mdist-ssr[m[41m[m
+[32m+[m[32m*.local[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Editor directories and files[m[41m[m
+[32m+[m[32m.vscode/*[m[41m[m
+[32m+[m[32m!.vscode/extensions.json[m[41m[m
+[32m+[m[32m.idea[m[41m[m
+[32m+[m[32m.DS_Store[m[41m[m
+[32m+[m[32m*.suo[m[41m[m
+[32m+[m[32m*.ntvs*[m[41m[m
+[32m+[m[32m*.njsproj[m[41m[m
+[32m+[m[32m*.sln[m[41m[m
+[32m+[m[32m*.sw?[m[41m[m
+[32m+[m[32m.env[m[41m[m
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 76306f8..9f0d9c1 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,73 +1,73 @@[m
+[31m-# Welcome to your Lovable project[m
+[31m-[m
+[31m-## Project info[m
+[31m-[m
+[31m-**URL**: https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128[m
+[31m-[m
+[31m-## How can I edit this code?[m
+[31m-[m
+[31m-There are several ways of editing your application.[m
+[31m-[m
+[31m-**Use Lovable**[m
+[31m-[m
+[31m-Simply visit the [Lovable Project](https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128) and start prompting.[m
+[31m-[m
+[31m-Changes made via Lovable will be committed automatically to this repo.[m
+[31m-[m
+[31m-**Use your preferred IDE**[m
+[31m-[m
+[31m-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.[m
+[31m-[m
+[31m-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)[m
+[31m-[m
+[31m-Follow these steps:[m
+[31m-[m
+[31m-```sh[m
+[31m-# Step 1: Clone the repository using the project's Git URL.[m
+[31m-git clone <YOUR_GIT_URL>[m
+[31m-[m
+[31m-# Step 2: Navigate to the project directory.[m
+[31m-cd <YOUR_PROJECT_NAME>[m
+[31m-[m
+[31m-# Step 3: Install the necessary dependencies.[m
+[31m-npm i[m
+[31m-[m
+[31m-# Step 4: Start the development server with auto-reloading and an instant preview.[m
+[31m-npm run dev[m
+[31m-```[m
+[31m-[m
+[31m-**Edit a file directly in GitHub**[m
+[31m-[m
+[31m-- Navigate to the desired file(s).[m
+[31m-- Click the "Edit" button (pencil icon) at the top right of the file view.[m
+[31m-- Make your changes and commit the changes.[m
+[31m-[m
+[31m-**Use GitHub Codespaces**[m
+[31m-[m
+[31m-- Navigate to the main page of your repository.[m
+[31m-- Click on the "Code" button (green button) near the top right.[m
+[31m-- Select the "Codespaces" tab.[m
+[31m-- Click on "New codespace" to launch a new Codespace environment.[m
+[31m-- Edit files directly within the Codespace and commit and push your changes once you're done.[m
+[31m-[m
+[31m-## What technologies are used for this project?[m
+[31m-[m
+[31m-This project is built with:[m
+[31m-[m
+[31m-- Vite[m
+[31m-- TypeScript[m
+[31m-- React[m
+[31m-- shadcn-ui[m
+[31m-- Tailwind CSS[m
+[31m-[m
+[31m-## How can I deploy this project?[m
+[31m-[m
+[31m-Simply open [Lovable](https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128) and click on Share -> Publish.[m
+[31m-[m
+[31m-## Can I connect a custom domain to my Lovable project?[m
+[31m-[m
+[31m-Yes, you can![m
+[31m-[m
+[31m-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.[m
+[31m-[m
+[31m-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)[m
+[32m+[m[32m# Welcome to your Lovable project[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## Project info[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**URL**: https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## How can I edit this code?[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mThere are several ways of editing your application.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Use Lovable**[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mSimply visit the [Lovable Project](https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128) and start prompting.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mChanges made via Lovable will be committed automatically to this repo.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Use your preferred IDE**[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mIf you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mThe only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mFollow these steps:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m```sh[m[41m[m
+[32m+[m[32m# Step 1: Clone the repository using the project's Git URL.[m[41m[m
+[32m+[m[32mgit clone <YOUR_GIT_URL>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Step 2: Navigate to the project directory.[m[41m[m
+[32m+[m[32mcd <YOUR_PROJECT_NAME>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Step 3: Install the necessary dependencies.[m[41m[m
+[32m+[m[32mnpm i[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Step 4: Start the development server with auto-reloading and an instant preview.[m[41m[m
+[32m+[m[32mnpm run dev[m[41m[m
+[32m+[m[32m```[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Edit a file directly in GitHub**[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m- Navigate to the desired file(s).[m[41m[m
+[32m+[m[32m- Click the "Edit" button (pencil icon) at the top right of the file view.[m[41m[m
+[32m+[m[32m- Make your changes and commit the changes.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m**Use GitHub Codespaces**[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m- Navigate to the main page of your repository.[m[41m[m
+[32m+[m[32m- Click on the "Code" button (green button) near the top right.[m[41m[m
+[32m+[m[32m- Select the "Codespaces" tab.[m[41m[m
+[32m+[m[32m- Click on "New codespace" to launch a new Codespace environment.[m[41m[m
+[32m+[m[32m- Edit files directly within the Codespace and commit and push your changes once you're done.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## What technologies are used for this project?[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mThis project is built with:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m- Vite[m[41m[m
+[32m+[m[32m- TypeScript[m[41m[m
+[32m+[m[32m- React[m[41m[m
+[32m+[m[32m- shadcn-ui[m[41m[m
+[32m+[m[32m- Tailwind CSS[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## How can I deploy this project?[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mSimply open [Lovable](https://lovable.dev/projects/57b93960-adf3-471a-8ceb-6b56f0a17128) and click on Share -> Publish.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m## Can I connect a custom domain to my Lovable project?[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mYes, you can![m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mTo connect a domain, navigate to Project > Settings > Domains and click Connect Domain.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mRead more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)[m[41m[m
+[1mdiff --git a/components.json b/components.json[m
+[1mindex f29e3f1..6c8a8eb 100644[m
+[1m--- a/components.json[m
+[1m+++ b/components.json[m
+[36m@@ -1,20 +1,20 @@[m
+[31m-{[m
+[31m-  "$schema": "https://ui.shadcn.com/schema.json",[m
+[31m-  "style": "default",[m
+[31m-  "rsc": false,[m
+[31m-  "tsx": true,[m
+[31m-  "tailwind": {[m
+[31m-    "config": "tailwind.config.ts",[m
+[31m-    "css": "src/index.css",[m
+[31m-    "baseColor": "slate",[m
+[31m-    "cssVariables": true,[m
+[31m-    "prefix": ""[m
+[31m-  },[m
+[31m-  "aliases": {[m
+[31m-    "components": "@/components",[m
+[31m-    "utils": "@/lib/utils",[m
+[31m-    "ui": "@/components/ui",[m
+[31m-    "lib": "@/lib",[m
+[31m-    "hooks": "@/hooks"[m
+[31m-  }[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32m  "$schema": "https://ui.shadcn.com/schema.json",[m[41m[m
+[32m+[m[32m  "style": "default",[m[41m[m
+[32m+[m[32m  "rsc": false,[m[41m[m
+[32m+[m[32m  "tsx": true,[m[41m[m
+[32m+[m[32m  "tailwind": {[m[41m[m
+[32m+[m[32m    "config": "tailwind.config.ts",[m[41m[m
+[32m+[m[32m    "css": "src/index.css",[m[41m[m
+[32m+[m[32m    "baseColor": "slate",[m[41m[m
+[32m+[m[32m    "cssVariables": true,[m[41m[m
+[32m+[m[32m    "prefix": ""[m[41m[m
+[32m+[m[32m  },[m[41m[m
+[32m+[m[32m  "aliases": {[m[41m[m
+[32m+[m[32m    "components": "@/components",[m[41m[m
+[32m+[m[32m    "utils": "@/lib/utils",[m[41m[m
+[32m+[m[32m    "ui": "@/components/ui",[m[41m[m
+[32m+[m[32m    "lib": "@/lib",[m[41m[m
+[32m+[m[32m    "hooks": "@/hooks"[m[41m[m
+[32m+[m[32m  }[m[41m[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/eslint.config.js b/eslint.config.js[m
+[1mindex e67846f..8987615 100644[m
+[1m--- a/eslint.config.js[m
+[1m+++ b/eslint.config.js[m
+[36m@@ -1,29 +1,29 @@[m
+[31m-import js from "@eslint/js";[m
+[31m-import globals from "globals";[m
+[31m-import reactHooks from "eslint-plugin-react-hooks";[m
+[31m-import reactRefresh from "eslint-plugin-react-refresh";[m
+[31m-import tseslint from "typescript-eslint";[m
+[31m-[m
+[31m-export default tseslint.config([m
+[31m-  { ignores: ["dist"] },[m
+[31m-  {[m
+[31m-    extends: [js.configs.recommended, ...tseslint.configs.recommended],[m
+[31m-    files: ["**/*.{ts,tsx}"],[m
+[31m-    languageOptions: {[m
+[31m-      ecmaVersion: 2020,[m
+[31m-      globals: globals.browser,[m
+[31m-    },[m
+[31m-    plugins: {[m
+[31m-      "react-hooks": reactHooks,[m
+[31m-      "react-refresh": reactRefresh,[m
+[31m-    },[m
+[31m-    rules: {[m
+[31m-      ...reactHooks.configs.recommended.rules,[m
+[31m-      "react-refresh/only-export-components": [[m
+[31m-        "warn",[m
+[31m-        { allowConstantExport: true },[m
+[31m-      ],[m
+[31m-      "@typescript-eslint/no-unused-vars": "off",[m
+[31m-    },[m
+[31m-  }[m
+[31m-);[m
+[32m+[m[32mimport js from "@eslint/js";[m[41m[m
+[32m+[m[32mimport globals from "globals";[m[41m[m
+[32m+[m[32mimport reactHooks from "eslint-plugin-react-hooks";[m[41m[m
+[32m+[m[32mimport reactRefresh from "eslint-plugin-react-refresh";[m[41m[m
+[32m+[m[32mimport tseslint from "typescript-eslint";[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mexport default tseslint.config([m[41m[m
+[32m+[m[32m  { ignores: ["dist"] },[m[41m[m
+[32m+[m[32m  {[m[41m[m
+[32m+[m[32m    extends: [js.configs.recommended, ...tseslint.configs.recommended],[m[41m[m
+[32m+[m[32m    files: ["**/*.{ts,tsx}"],[m[41m[m
+[32m+[m[32m    languageOptions: {[m[41m[m
+[32m+[m[32m      ecmaVersion: 2020,[m[41m[m
+[32m+[m[32m      globals: globals.browser,[m[41m[m
+[32m+[m[32m    },[m[41m[m
+[32m+[m[32m    plugins: {[m[41m[m
+[32m+[m[32m      "react-hooks": reactHooks,[m[41m[m
+[32m+[m[32m      "react-refresh": reactRefresh,[m[41m[m
+[32m+[m[32m    },[m[41m[m
+[32m+[m[32m    rules: {[m[41m[m
+[32m+[m[32m      ...reactHooks.configs.recommended.rules,[m[41m[m
+[32m+[m[32m      "react-refresh/only-export-components": [[m[41m[m
+[32m+[m[32m        "warn",[m[41m[m
+[32m+[m[32m        { allowConstantExport: true },[m[41m[m
+[32m+[m[32m      ],[m[41m[m
+[32m+[m[32m      "@typescript-eslint/no-unused-vars": "off",[m[41m[m
+[32m+[m[32m    },[m[41m[m
+[32m+[m[32m  }[m[41m[m
+[32m+[m[32m);[m[41m[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7276d58..a8c88f3 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -1,24 +1,24 @@[m
+[31m-<!DOCTYPE html>[m
+[31m-<html lang="en">[m
+[31m-  <head>[m
+[31m-    <meta charset="UTF-8" />[m
+[31m-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[31m-    <title>decision-history-hub</title>[m
+[31m-    <meta name="description" content="Lovable Generated Project" />[m
+[31m-    <meta name="author" content="Lovable" />[m
+[31m-[m
+[31m-    <meta property="og:title" content="decision-history-hub" />[m
+[31m-    <meta property="og:description" content="Lovable Generated Project" />[m
+[31m-    <meta property="og:type" content="website" />[m
+[31m-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />[m
+[31m-[m
+[31m-    <meta name="twitter:card" content="summary_large_image" />[m
+[31m-    <meta name="twitter:site" content="@lovable_dev" />[m
+[31m-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />[m
+[31m-  </head>[m
+[31m-[m
+[31m-  <body>[m
+[31m-    <div id="root"></div>[m
+[31m-    <script type="module" src="/src/main.tsx"></script>[m
+[31m-  </body>[m
+[31m-</html>[m
+[32m+[m[32m<!DOCTYPE html>[m[41m[m
+[32m+[m[32m<html lang="en">[m[41m[m
+[32m+[m[32m  <head>[m[41m[m
+[32m+[m[32m    <meta charset="UTF-8" />[m[41m[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m[41m[m
+[32m+[m[32m    <title>decision-history-hub</title>[m[41m[m
+[32m+[m[32m    <meta name="description" content="Lovable Generated Project" />[m[41m[m
+[32m+[m[32m    <meta name="author" content="Lovable" />[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    <meta property="og:title" content="decision-history-hub" />[m[41m[m
+[32m+[m[32m    <meta property="og:description" content="Lovable Generated Project" />[m[41m[m
+[32m+[m[32m    <meta property="og:type" content="website" />[m[41m[m
+[32m+[m[32m    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    <meta name="twitter:card" content="summary_large_image" />[m[41m[m
+[32m+[m[32m    <meta name="twitter:site" content="@lovable_dev" />[m[41m[m
+[32m+[m[32m    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />[m[41m[m
+[32m+[m[32m  </head>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m  <body>[m[41m[m
+[32m+[m[32m    <div id="root"></div>[m[41m[m
+[32m+[m[32m    <script type="module" src="/src/main.tsx"></script>[m[41m[m
+[32m+[m[32m  </body>[m[41m[m
+[32m+[m[32m</html>[m[41m[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex fcb663d..1372ab1 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -1,7108 +1,7108 @@[m
+[31m-{[m
+[31m-  "name": "vite_react_shadcn_ts",[m
+[31m-  "version": "0.0.0",[m
+[31m-  "lockfileVersion": 3,[m
+[31m-  "requires": true,[m
+[31m-  "packages": {[m
+[31m-    "": {[m
+[31m-      "name": "vite_react_shadcn_ts",[m
+[31m-      "version": "0.0.0",[m
+[31m-      "dependencies": {[m
+[31m-        "@hookform/resolvers": "^3.9.0",[m
+[31m-        "@radix-ui/react-accordion": "^1.2.0",[m
+[31m-        "@radix-ui/react-alert-dialog": "^1.1.1",[m
+[31m-        "@radix-ui/react-aspect-ratio": "^1.1.0",[m
+[31m-        "@radix-ui/react-avatar": "^1.1.0",[m
+[31m-        "@radix-ui/react-checkbox": "^1.1.1",[m
+[31m-        "@radix-ui/react-collapsible": "^1.1.0",[m
+[31m-        "@radix-ui/react-context-menu": "^2.2.1",[m
+[31m-        "@radix-ui/react-dialog": "^1.1.2",[m
+[31m-        "@radix-ui/react-dropdown-menu": "^2.1.1",[m
+[31m-        "@radix-ui/react-hover-card": "^1.1.1",[m
+[31m-        "@radix-ui/react-label": "^2.1.0",[m
+[31m-        "@radix-ui/react-menubar": "^1.1.1",[m
+[31m-        "@radix-ui/react-navigation-menu": "^1.2.0",[m
+[31m-        "@radix-ui/react-popover": "^1.1.1",[m
+[31m-        "@radix-ui/react-progress": "^1.1.0",[m
+[31m-        "@radix-ui/react-radio-group": "^1.2.0",[m
+[31m-        "@radix-ui/react-scroll-area": "^1.1.0",[m
+[31m-        "@radix-ui/react-select": "^2.1.1",[m
+[31m-        "@radix-ui/react-separator": "^1.1.0",[m
+[31m-        "@radix-ui/react-slider": "^1.2.0",[m
+[31m-        "@radix-ui/react-slot": "^1.1.0",[m
+[31m-        "@radix-ui/react-switch": "^1.1.0",[m
+[31m-        "@radix-ui/react-tabs": "^1.1.0",[m
+[31m-        "@radix-ui/react-toast": "^1.2.1",[m
+[31m-        "@radix-ui/react-toggle": "^1.1.0",[m
+[31m-        "@radix-ui/react-toggle-group": "^1.1.0",[m
+[31m-        "@radix-ui/react-tooltip": "^1.1.4",[m
+[31m-        "@tanstack/react-query": "^5.56.2",[m
+[31m-        "class-variance-authority": "^0.7.1",[m
+[31m-        "clsx": "^2.1.1",[m
+[31m-        "cmdk": "^1.0.0",[m
+[31m-        "date-fns": "^3.6.0",[m
+[31m-        "embla-carousel-react": "^8.3.0",[m
+[31m-        "input-otp": "^1.2.4",[m
+[31m-        "lucide-react": "^0.462.0",[m
+[31m-        "next-themes": "^0.3.0",[m
+[31m-        "react": "^18.3.1",[m
+[31m-        "react-day-picker": "^8.10.1",[m
+[31m-        "react-dom": "^18.3.1",[m
+[31m-        "react-hook-form": "^7.53.0",[m
+[31m-        "react-resizable-panels": "^2.1.3",[m
+[31m-        "react-router-dom": "^6.26.2",[m
+[31m-        "recharts": "^2.12.7",[m
+[31m-        "sonner": "^1.5.0",[m
+[31m-        "tailwind-merge": "^2.5.2",[m
+[31m-        "tailwindcss-animate": "^1.0.7",[m
+[31m-        "vaul": "^0.9.3",[m
+[31m-        "zod": "^3.23.8"[m
+[31m-      },[m
+[31m-      "devDependencies": {[m
+[31m-        "@eslint/js": "^9.9.0",[m
+[31m-        "@tailwindcss/typography": "^0.5.15",[m
+[31m-        "@types/node": "^22.5.5",[m
+[31m-        "@types/react": "^18.3.3",[m
+[31m-        "@types/react-dom": "^18.3.0",[m
+[31m-        "@vitejs/plugin-react-swc": "^3.5.0",[m
+[31m-        "autoprefixer": "^10.4.20",[m
+[31m-        "eslint": "^9.9.0",[m
+[31m-        "eslint-plugin-react-hooks": "^5.1.0-rc.0",[m
+[31m-        "eslint-plugin-react-refresh": "^0.4.9",[m
+[31m-        "globals": "^15.9.0",[m
+[31m-        "lovable-tagger": "^1.1.7",[m
+[31m-        "postcss": "^8.4.47",[m
+[31m-        "tailwindcss": "^3.4.11",[m
+[31m-        "typescript": "^5.5.3",[m
+[31m-        "typescript-eslint": "^8.0.1",[m
+[31m-        "vite": "^5.4.1"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@alloc/quick-lru": {[m
+[31m-      "version": "5.2.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz",[m
+[31m-      "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=10"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "url": "https://github.com/sponsors/sindresorhus"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@babel/helper-string-parser": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.9.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@babel/helper-validator-identifier": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.9.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@babel/parser": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-aI3jjAAO1fh7vY/pBGsn1i9LDbRP43+asrRlkPuTXW5yHXtd1NgTEMudbBoDDxrf1daEEfPJqR+JBMakzrR4Dg==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@babel/types": "^7.25.9"[m
+[31m-      },[m
+[31m-      "bin": {[m
+[31m-        "parser": "bin/babel-parser.js"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@babel/runtime": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-4zpTHZ9Cm6L9L+uIqghQX8ZXg8HKFcjYO3qHoO8zTmRm6HQUJ8SSJ+KRvbMBZn0EGVlT4DRYeQ/6hjlyXBh+Kg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "regenerator-runtime": "^0.14.0"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.9.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@babel/types": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-OwS2CM5KocvQ/k7dFJa8i5bNGJP0hXWfVCfDkqRFP1IreH1JDC7wG6eCYCi0+McbfT8OR/kNqsI0UU0xP9H6PQ==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@babel/helper-string-parser": "^7.25.9",[m
+[31m-        "@babel/helper-validator-identifier": "^7.25.9"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.9.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/aix-ppc64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==",[m
+[31m-      "cpu": [[m
+[31m-        "ppc64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "aix"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/android-arm": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-vCPvzSjpPHEi1siZdlvAlsPxXl7WbOVUBBAowWug4rJHb68Ox8KualB+1ocNvT5fjv6wpkX6o/iEpbDrf68zcg==",[m
+[31m-      "cpu": [[m
+[31m-        "arm"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "android"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/android-arm64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-c0uX9VAUBQ7dTDCjq+wdyGLowMdtR/GoC2U5IYk/7D1H1JYC0qseD7+11iMP2mRLN9RcCMRcjC4YMclCzGwS/A==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "android"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/android-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-D7aPRUUNHRBwHxzxRvp856rjUHRFW1SdQATKXH2hqA0kAZb1hKmi02OpYRacl0TxIGz/ZmXWlbZgjwWYaCakTA==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "android"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/darwin-arm64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-DwqXqZyuk5AiWWf3UfLiRDJ5EDd49zg6O9wclZ7kUMv2WRFr4HKjXp/5t8JZ11QbQfUS6/cRCKGwYhtNAY88kQ==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "darwin"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/darwin-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-se/JjF8NlmKVG4kNIuyWMV/22ZaerB+qaSi5MdrXtd6R08kvs2qCN4C09miupktDitvh8jRFflwGFBQcxZRjbw==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "darwin"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/freebsd-arm64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-5JcRxxRDUJLX8JXp/wcBCy3pENnCgBR9bN6JsY4OmhfUtIHe3ZW0mawA7+RDAcMLrMIZaf03NlQiX9DGyB8h4g==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "freebsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/freebsd-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-J95kNBj1zkbMXtHVH29bBriQygMXqoVQOQYA+ISs0/2l3T9/kj42ow2mpqerRBxDJnmkUDCaQT/dfNXWX/ZZCQ==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "freebsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-arm": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-bPb5AHZtbeNGjCKVZ9UGqGwo8EUu4cLq68E95A53KlxAPRmUyYv2D6F0uUI65XisGOL1hBP5mTronbgo+0bFcA==",[m
+[31m-      "cpu": [[m
+[31m-        "arm"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-arm64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-ibKvmyYzKsBeX8d8I7MH/TMfWDXBF3db4qM6sy+7re0YXya+K1cem3on9XgdT2EQGMu4hQyZhan7TeQ8XkGp4Q==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-ia32": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-YvjXDqLRqPDl2dvRODYmmhz4rPeVKYvppfGYKSNGdyZkA01046pLWyRKKI3ax8fbJoK5QbxblURkwK/MWY18Tg==",[m
+[31m-      "cpu": [[m
+[31m-        "ia32"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-loong64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-uHf1BmMG8qEvzdrzAqg2SIG/02+4/DHB6a9Kbya0XDvwDEKCoC8ZRWI5JJvNdUjtciBGFQ5PuBlpEOXQj+JQSg==",[m
+[31m-      "cpu": [[m
+[31m-        "loong64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-mips64el": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-IajOmO+KJK23bj52dFSNCMsz1QP1DqM6cwLUv3W1QwyxkyIWecfafnI555fvSGqEKwjMXVLokcV5ygHW5b3Jbg==",[m
+[31m-      "cpu": [[m
+[31m-        "mips64el"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-ppc64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-1hHV/Z4OEfMwpLO8rp7CvlhBDnjsC3CttJXIhBi+5Aj5r+MBvy4egg7wCbe//hSsT+RvDAG7s81tAvpL2XAE4w==",[m
+[31m-      "cpu": [[m
+[31m-        "ppc64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-riscv64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-2HdXDMd9GMgTGrPWnJzP2ALSokE/0O5HhTUvWIbD3YdjME8JwvSCnNGBnTThKGEB91OZhzrJ4qIIxk/SBmyDDA==",[m
+[31m-      "cpu": [[m
+[31m-        "riscv64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-s390x": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-zus5sxzqBJD3eXxwvjN1yQkRepANgxE9lgOW2qLnmr8ikMTphkjgXu1HR01K4FJg8h1kEEDAqDcZQtbrRnB41A==",[m
+[31m-      "cpu": [[m
+[31m-        "s390x"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/linux-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-1rYdTpyv03iycF1+BhzrzQJCdOuAOtaqHTWJZCWvijKD2N5Xu0TtVC8/+1faWqcP9iBCWOmjmhoH94dH82BxPQ==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "linux"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/netbsd-arm64": {[m
+[31m-      "version": "0.25.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.0.tgz",[m
+[31m-      "integrity": "sha512-RuG4PSMPFfrkH6UwCAqBzauBWTygTvb1nxWasEJooGSJ/NwRw7b2HOwyRTQIU97Hq37l3npXoZGYMy3b3xYvPw==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "netbsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/netbsd-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-Woi2MXzXjMULccIwMnLciyZH4nCIMpWQAs049KEeMvOcNADVxo0UBIQPfSmxB3CWKedngg7sWZdLvLczpe0tLg==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "netbsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/openbsd-arm64": {[m
+[31m-      "version": "0.25.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.0.tgz",[m
+[31m-      "integrity": "sha512-21sUNbq2r84YE+SJDfaQRvdgznTD8Xc0oc3p3iW/a1EVWeNj/SdUCbm5U0itZPQYRuRTW20fPMWMpcrciH2EJw==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "openbsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/openbsd-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-HLNNw99xsvx12lFBUwoT8EVCsSvRNDVxNpjZ7bPn947b8gJPzeHWyNVhFsaerc0n3TsbOINvRP2byTZ5LKezow==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "openbsd"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/sunos-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-6+gjmFpfy0BHU5Tpptkuh8+uw3mnrvgs+dSPQXQOv3ekbordwnzTVEb4qnIvQcYXq6gzkyTnoZ9dZG+D4garKg==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "sunos"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/win32-arm64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-Z0gOTd75VvXqyq7nsl93zwahcTROgqvuAcYDUr+vOv8uHhNSKROyU961kgtCD1e95IqPKSQKH7tBTslnS3tA8A==",[m
+[31m-      "cpu": [[m
+[31m-        "arm64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "win32"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/win32-ia32": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-SWXFF1CL2RVNMaVs+BBClwtfZSvDgtL//G/smwAc5oVK/UPu2Gu9tIaRgFmYFFKrmg3SyAjSrElf0TiJ1v8fYA==",[m
+[31m-      "cpu": [[m
+[31m-        "ia32"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "win32"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@esbuild/win32-x64": {[m
+[31m-      "version": "0.21.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz",[m
+[31m-      "integrity": "sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw==",[m
+[31m-      "cpu": [[m
+[31m-        "x64"[m
+[31m-      ],[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "os": [[m
+[31m-        "win32"[m
+[31m-      ],[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint-community/eslint-utils": {[m
+[31m-      "version": "4.4.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz",[m
+[31m-      "integrity": "sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "eslint-visitor-keys": "^3.3.0"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": "^12.22.0 || ^14.17.0 || >=16.0.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "eslint": "^6.0.0 || ^7.0.0 || >=8.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys": {[m
+[31m-      "version": "3.4.3",[m
+[31m-      "resolved": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz",[m
+[31m-      "integrity": "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": "^12.22.0 || ^14.17.0 || >=16.0.0"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "url": "https://opencollective.com/eslint"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint-community/regexpp": {[m
+[31m-      "version": "4.11.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.11.1.tgz",[m
+[31m-      "integrity": "sha512-m4DVN9ZqskZoLU5GlWZadwDnYo3vAEydiUayB9widCl9ffWx2IvPnp6n3on5rJmziJSw9Bv+Z3ChDVdMwXCY8Q==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": "^12.0.0 || ^14.0.0 || >=16.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/config-array": {[m
+[31m-      "version": "0.18.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/config-array/-/config-array-0.18.0.tgz",[m
+[31m-      "integrity": "sha512-fTxvnS1sRMu3+JjXwJG0j/i4RT9u4qJ+lqS/yCGap4lH4zZGzQ7tu+xZqQmcMZq5OBZDL4QRxQzRjkWcGt8IVw==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "dependencies": {[m
+[31m-        "@eslint/object-schema": "^2.1.4",[m
+[31m-        "debug": "^4.3.1",[m
+[31m-        "minimatch": "^3.1.2"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/core": {[m
+[31m-      "version": "0.7.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/core/-/core-0.7.0.tgz",[m
+[31m-      "integrity": "sha512-xp5Jirz5DyPYlPiKat8jaq0EmYvDXKKpzTbxXMpT9eqlRJkRKIz9AGMdlvYjih+im+QlhWrpvVjl8IPC/lHlUw==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/eslintrc": {[m
+[31m-      "version": "3.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-3.1.0.tgz",[m
+[31m-      "integrity": "sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "ajv": "^6.12.4",[m
+[31m-        "debug": "^4.3.2",[m
+[31m-        "espree": "^10.0.1",[m
+[31m-        "globals": "^14.0.0",[m
+[31m-        "ignore": "^5.2.0",[m
+[31m-        "import-fresh": "^3.2.1",[m
+[31m-        "js-yaml": "^4.1.0",[m
+[31m-        "minimatch": "^3.1.2",[m
+[31m-        "strip-json-comments": "^3.1.1"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "url": "https://opencollective.com/eslint"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/eslintrc/node_modules/globals": {[m
+[31m-      "version": "14.0.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/globals/-/globals-14.0.0.tgz",[m
+[31m-      "integrity": "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "url": "https://github.com/sponsors/sindresorhus"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/js": {[m
+[31m-      "version": "9.13.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/js/-/js-9.13.0.tgz",[m
+[31m-      "integrity": "sha512-IFLyoY4d72Z5y/6o/BazFBezupzI/taV8sGumxTAVw3lXG9A6md1Dc34T9s1FoD/an9pJH8RHbAxsaEbBed9lA==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/object-schema": {[m
+[31m-      "version": "2.1.4",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/object-schema/-/object-schema-2.1.4.tgz",[m
+[31m-      "integrity": "sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@eslint/plugin-kit": {[m
+[31m-      "version": "0.2.3",[m
+[31m-      "resolved": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.2.3.tgz",[m
+[31m-      "integrity": "sha512-2b/g5hRmpbb1o4GnTZax9N9m0FXzz9OV42ZzI4rDDMDuHUqigAiQCEWChBWCY4ztAGVRjoWT19v0yMmc5/L5kA==",[m
+[31m-      "dev": true,[m
+[31m-      "dependencies": {[m
+[31m-        "levn": "^0.4.1"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@floating-ui/core": {[m
+[31m-      "version": "1.6.8",[m
+[31m-      "resolved": "https://registry.npmjs.org/@floating-ui/core/-/core-1.6.8.tgz",[m
+[31m-      "integrity": "sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@floating-ui/utils": "^0.2.8"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@floating-ui/dom": {[m
+[31m-      "version": "1.6.11",[m
+[31m-      "resolved": "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.6.11.tgz",[m
+[31m-      "integrity": "sha512-qkMCxSR24v2vGkhYDo/UzxfJN3D4syqSjyuTFz6C7XcpU1pASPRieNI0Kj5VP3/503mOfYiGY891ugBX1GlABQ==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@floating-ui/core": "^1.6.0",[m
+[31m-        "@floating-ui/utils": "^0.2.8"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@floating-ui/react-dom": {[m
+[31m-      "version": "2.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.2.tgz",[m
+[31m-      "integrity": "sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@floating-ui/dom": "^1.0.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "react": ">=16.8.0",[m
+[31m-        "react-dom": ">=16.8.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@floating-ui/utils": {[m
+[31m-      "version": "0.2.8",[m
+[31m-      "resolved": "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.8.tgz",[m
+[31m-      "integrity": "sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==",[m
+[31m-      "license": "MIT"[m
+[31m-    },[m
+[31m-    "node_modules/@hookform/resolvers": {[m
+[31m-      "version": "3.9.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.9.0.tgz",[m
+[31m-      "integrity": "sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "peerDependencies": {[m
+[31m-        "react-hook-form": "^7.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@humanfs/core": {[m
+[31m-      "version": "0.19.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@humanfs/core/-/core-0.19.0.tgz",[m
+[31m-      "integrity": "sha512-2cbWIHbZVEweE853g8jymffCA+NCMiuqeECeBBLm8dg2oFdjuGJhgN4UAbI+6v0CKbbhvtXA4qV8YR5Ji86nmw==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18.18.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@humanfs/node": {[m
+[31m-      "version": "0.16.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@humanfs/node/-/node-0.16.5.tgz",[m
+[31m-      "integrity": "sha512-KSPA4umqSG4LHYRodq31VDwKAvaTF4xmVlzM8Aeh4PlU1JQ3IG0wiA8C25d3RQ9nJyM3mBHyI53K06VVL/oFFg==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "dependencies": {[m
+[31m-        "@humanfs/core": "^0.19.0",[m
+[31m-        "@humanwhocodes/retry": "^0.3.0"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18.18.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@humanwhocodes/module-importer": {[m
+[31m-      "version": "1.0.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@humanwhocodes/module-importer/-/module-importer-1.0.1.tgz",[m
+[31m-      "integrity": "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12.22"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "type": "github",[m
+[31m-        "url": "https://github.com/sponsors/nzakas"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@humanwhocodes/retry": {[m
+[31m-      "version": "0.3.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@humanwhocodes/retry/-/retry-0.3.1.tgz",[m
+[31m-      "integrity": "sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==",[m
+[31m-      "dev": true,[m
+[31m-      "license": "Apache-2.0",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=18.18"[m
+[31m-      },[m
+[31m-      "funding": {[m
+[31m-        "type": "github",[m
+[31m-        "url": "https://github.com/sponsors/nzakas"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@isaacs/cliui": {[m
+[31m-      "version": "8.0.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz",[m
+[31m-      "integrity": "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==",[m
+[31m-      "license": "ISC",[m
+[31m-      "dependencies": {[m
+[31m-        "string-width": "^5.1.2",[m
+[31m-        "string-width-cjs": "npm:string-width@^4.2.0",[m
+[31m-        "strip-ansi": "^7.0.1",[m
+[31m-        "strip-ansi-cjs": "npm:strip-ansi@^6.0.1",[m
+[31m-        "wrap-ansi": "^8.1.0",[m
+[31m-        "wrap-ansi-cjs": "npm:wrap-ansi@^7.0.0"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=12"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@jridgewell/gen-mapping": {[m
+[31m-      "version": "0.3.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz",[m
+[31m-      "integrity": "sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@jridgewell/set-array": "^1.2.1",[m
+[31m-        "@jridgewell/sourcemap-codec": "^1.4.10",[m
+[31m-        "@jridgewell/trace-mapping": "^0.3.24"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@jridgewell/resolve-uri": {[m
+[31m-      "version": "3.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",[m
+[31m-      "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@jridgewell/set-array": {[m
+[31m-      "version": "1.2.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz",[m
+[31m-      "integrity": "sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==",[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">=6.0.0"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@jridgewell/sourcemap-codec": {[m
+[31m-      "version": "1.5.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz",[m
+[31m-      "integrity": "sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==",[m
+[31m-      "license": "MIT"[m
+[31m-    },[m
+[31m-    "node_modules/@jridgewell/trace-mapping": {[m
+[31m-      "version": "0.3.25",[m
+[31m-      "resolved": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz",[m
+[31m-      "integrity": "sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@jridgewell/resolve-uri": "^3.1.0",[m
+[31m-        "@jridgewell/sourcemap-codec": "^1.4.14"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@nodelib/fs.scandir": {[m
+[31m-      "version": "2.1.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz",[m
+[31m-      "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@nodelib/fs.stat": "2.0.5",[m
+[31m-        "run-parallel": "^1.1.9"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">= 8"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@nodelib/fs.stat": {[m
+[31m-      "version": "2.0.5",[m
+[31m-      "resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz",[m
+[31m-      "integrity": "sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==",[m
+[31m-      "license": "MIT",[m
+[31m-      "engines": {[m
+[31m-        "node": ">= 8"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@nodelib/fs.walk": {[m
+[31m-      "version": "1.2.8",[m
+[31m-      "resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz",[m
+[31m-      "integrity": "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@nodelib/fs.scandir": "2.1.5",[m
+[31m-        "fastq": "^1.6.0"[m
+[31m-      },[m
+[31m-      "engines": {[m
+[31m-        "node": ">= 8"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@pkgjs/parseargs": {[m
+[31m-      "version": "0.11.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz",[m
+[31m-      "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "optional": true,[m
+[31m-      "engines": {[m
+[31m-        "node": ">=14"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/number": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/number/-/number-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==",[m
+[31m-      "license": "MIT"[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/primitive": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-4Z8dn6Upk0qk4P74xBhZ6Hd/w0mPEzOOLxy4xiPXOXqjF7jZS0VAKk7/x/H6FyY2zCkYJqePf1G5KmkmNJ4RBA==",[m
+[31m-      "license": "MIT"[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-accordion": {[m
+[31m-      "version": "1.2.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.1.tgz",[m
+[31m-      "integrity": "sha512-bg/l7l5QzUjgsh8kjwDFommzAshnUsuVMV5NM56QVCm+7ZckYdd9P/ExR8xG/Oup0OajVxNLaHJ1tb8mXk+nzQ==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-collapsible": "1.1.1",[m
+[31m-        "@radix-ui/react-collection": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-direction": "1.1.0",[m
+[31m-        "@radix-ui/react-id": "1.1.0",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-alert-dialog": {[m
+[31m-      "version": "1.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.2.tgz",[m
+[31m-      "integrity": "sha512-eGSlLzPhKO+TErxkiGcCZGuvbVMnLA1MTnyBksGOeGRGkxHiiJUujsjmNTdWTm4iHVSRaUao9/4Ur671auMghQ==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-dialog": "1.1.2",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-slot": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-arrow": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-FmlW1rCg7hBpEBwFbjHwCW6AmWLQM6g/v0Sn8XbP9NvmSZ2San1FpQeyPtufzOMSIx7Y4dzjlHoifhp+7NkZhw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/react-primitive": "2.0.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-aspect-ratio": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-dP87DM/Y7jFlPgUZTlhx6FF5CEzOiaxp2rBCKlaXlpH5Ip/9Fg5zZ9lDOQ5o/MOfUlf36eak14zoWYpgcgGoOg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/react-primitive": "2.0.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-avatar": {[m
+[31m-      "version": "1.1.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.1.tgz",[m
+[31m-      "integrity": "sha512-eoOtThOmxeoizxpX6RiEsQZ2wj5r4+zoeqAwO0cBaFQGjJwIH3dIX0OCxNrCyrrdxG+vBweMETh3VziQG7c1kw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-callback-ref": "1.1.0",[m
+[31m-        "@radix-ui/react-use-layout-effect": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-checkbox": {[m
+[31m-      "version": "1.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.1.2.tgz",[m
+[31m-      "integrity": "sha512-/i0fl686zaJbDQLNKrkCbMyDm6FQMt4jg323k7HuqitoANm9sE23Ql8yOK3Wusk34HSLKDChhMux05FnP6KUkw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-presence": "1.1.1",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0",[m
+[31m-        "@radix-ui/react-use-previous": "1.1.0",[m
+[31m-        "@radix-ui/react-use-size": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-collapsible": {[m
+[31m-      "version": "1.1.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.1.tgz",[m
+[31m-      "integrity": "sha512-1///SnrfQHJEofLokyczERxQbWfCGQlQ2XsCZMucVs6it+lq9iw4vXy+uDn1edlb58cOZOWSldnfPAYcT4O/Yg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-id": "1.1.0",[m
+[31m-        "@radix-ui/react-presence": "1.1.1",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0",[m
+[31m-        "@radix-ui/react-use-layout-effect": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-collection": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-GZsZslMJEyo1VKm5L1ZJY8tGDxZNPAoUeQUIbKeJfoi7Q4kmig5AsgLMYYuyYbfjd8fBmFORAIwYAkXMnXZgZw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.0",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-slot": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-collection/node_modules/@radix-ui/react-context": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-OKrckBy+sMEgYM/sMmqmErVn0kZqrHPJze+Ql3DzYsDDp0hl0L62nx/2122/Bvps1qz645jlcu2tD9lrRSdf8A==",[m
+[31m-      "license": "MIT",[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-compose-refs": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-b4inOtiaOnYf9KWyO3jAeeCG6FeyfY6ldiEPanbUjWd+xIk5wZeHa8yVwmrJ2vderhu/BQvzCrJI0lHd+wIiqw==",[m
+[31m-      "license": "MIT",[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-context": {[m
+[31m-      "version": "1.1.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.1.tgz",[m
+[31m-      "integrity": "sha512-UASk9zi+crv9WteK/NU4PLvOoL3OuE6BWVKNF6hPRBtYBDXQ2u5iu3O59zUlJiTVvkyuycnqrztsHVJwcK9K+Q==",[m
+[31m-      "license": "MIT",[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-context-menu": {[m
+[31m-      "version": "2.2.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.2.tgz",[m
+[31m-      "integrity": "sha512-99EatSTpW+hRYHt7m8wdDlLtkmTovEe8Z/hnxUPV+SKuuNL5HWNhQI4QSdjZqNSgXHay2z4M3Dym73j9p2Gx5Q==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-menu": "2.1.2",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-callback-ref": "1.1.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-dialog": {[m
+[31m-      "version": "1.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.2.tgz",[m
+[31m-      "integrity": "sha512-Yj4dZtqa2o+kG61fzB0H2qUvmwBA2oyQroGLyNtBj1beo1khoQ3q1a2AO8rrQYjd8256CO9+N8L9tvsS+bnIyA==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-dismissable-layer": "1.1.1",[m
+[31m-        "@radix-ui/react-focus-guards": "1.1.1",[m
+[31m-        "@radix-ui/react-focus-scope": "1.1.0",[m
+[31m-        "@radix-ui/react-id": "1.1.0",[m
+[31m-        "@radix-ui/react-portal": "1.1.2",[m
+[31m-        "@radix-ui/react-presence": "1.1.1",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-slot": "1.1.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0",[m
+[31m-        "aria-hidden": "^1.1.1",[m
+[31m-        "react-remove-scroll": "2.6.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-direction": {[m
+[31m-      "version": "1.1.0",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.0.tgz",[m
+[31m-      "integrity": "sha512-BUuBvgThEiAXh2DWu93XsT+a3aWrGqolGlqqw5VU1kG7p/ZH2cuDlM1sRLNnY3QcBS69UIz2mcKhMxDsdewhjg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-dismissable-layer": {[m
+[31m-      "version": "1.1.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.1.tgz",[m
+[31m-      "integrity": "sha512-QSxg29lfr/xcev6kSz7MAlmDnzbP1eI/Dwn3Tp1ip0KT5CUELsxkekFEMVBEoykI3oV39hKT4TKZzBNMbcTZYQ==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-callback-ref": "1.1.0",[m
+[31m-        "@radix-ui/react-use-escape-keydown": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"[m
+[31m-      },[m
+[31m-      "peerDependenciesMeta": {[m
+[31m-        "@types/react": {[m
+[31m-          "optional": true[m
+[31m-        },[m
+[31m-        "@types/react-dom": {[m
+[31m-          "optional": true[m
+[31m-        }[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "node_modules/@radix-ui/react-dropdown-menu": {[m
+[31m-      "version": "2.1.2",[m
+[31m-      "resolved": "https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.2.tgz",[m
+[31m-      "integrity": "sha512-GVZMR+eqK8/Kes0a36Qrv+i20bAPXSn8rCBTHx30w+3ECnR5o3xixAlqcVaYvLeyKUsm0aqyhWfmUcqufM8nYA==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "@radix-ui/primitive": "1.1.0",[m
+[31m-        "@radix-ui/react-compose-refs": "1.1.0",[m
+[31m-        "@radix-ui/react-context": "1.1.1",[m
+[31m-        "@radix-ui/react-id": "1.1.0",[m
+[31m-        "@radix-ui/react-menu": "2.1.2",[m
+[31m-        "@radix-ui/react-primitive": "2.0.0",[m
+[31m-        "@radix-ui/react-use-controllable-state": "1.1.0"[m
+[31m-      },[m
+[31m-      "peerDependencies": {[m
+[31m-        "@types/react": "*",[m
+[31m-        "@types/react-dom": "*",[m
+[31m-        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",[m
+[31m-        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc

@@ -84,7 +84,7 @@ interface BackendSubmission {
     applicationOwner: string;
     maintenanceWindow: string;
     changeDescription: string;
-    teamDl: string;
+    infrastructureImpact: string;
     hosts: string[];
   };
   formSubmission: {
@@ -119,7 +119,7 @@ const transformSubmission = (backendSubmission: BackendSubmission, index: number
     applicationOwner: backendSubmission.appData.applicationOwner,
     maintenanceWindow: backendSubmission.appData.maintenanceWindow,
     changeDescription: backendSubmission.appData.changeDescription,
-    teamDl: backendSubmission.appData.teamDl,
+    infrastructureImpact: backendSubmission.appData.infrastructureImpact,
     hosts: backendSubmission.appData.hosts,
   };
 };
@@ -141,7 +141,7 @@ interface Submission {
   applicationOwner?: string;
   maintenanceWindow?: string;
   changeDescription?: string;
-  teamDl?: string;
+  infrastructureImpact?: string;
   hosts?: string[];
 }
 

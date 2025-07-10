@@ -18,7 +18,7 @@ interface BackendSubmission {
     applicationOwner: string;
     maintenanceWindow: string;
     changeDescription: string;
-    teamDl: string;
+    infrastructureImpact: string;
     hosts: string[];
   };
   formSubmission: {

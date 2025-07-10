@@ -19,7 +19,7 @@ interface AppData {
   applicationOwner: string;
   maintenanceWindow: string;
   changeDescription: string;
-  teamDl: string;
+  infrastructureImpact: string;
   hosts: string[];
   disabled?: boolean;
 }
@@ -177,16 +177,16 @@ const EditApplicationDialog: React.FC<EditApplicationDialogProps> = ({
                   />
                 </div>
                 <div>
-                  <Label htmlFor="teamDl" className="text-sm font-semibold text-slate-700 mb-2 block flex items-center gap-1">
-                    <User className="w-4 h-4" />
-                    Team DL
+                  <Label htmlFor="infrastructureImpact" className="text-sm font-semibold text-slate-700 mb-2 block flex items-center gap-1">
+                    <Server className="w-4 h-4" />
+                    Infrastructure Impact
                   </Label>
                   <Input
-                    id="teamDl"
-                    value={editForm.teamDl}
-                    onChange={(e) => handleFormChange('teamDl', e.target.value)}
+                    id="infrastructureImpact"
+                    value={editForm.infrastructureImpact}
+                    onChange={(e) => handleFormChange('infrastructureImpact', e.target.value)}
                     className="bg-white border-blue-200 focus:border-blue-500 focus:ring-blue-500 h-11 text-base"
-                    placeholder="Team distribution list"
+                    placeholder="14 servers affected"
                   />
                 </div>
               </div>
